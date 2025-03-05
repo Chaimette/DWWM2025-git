@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 100vh;
+    display:flex;
+    flex-direction: column;   
+}
+.section1{
+    display: flex;
+    height:100%;
+}
+.section3{
+    display: flex;
+    height:100%;
+}
+.section2{
+    height:100%;
+}
+
+.div1, .div2, .div3, .div4, .div6, .div7, .div8, .div9 {
+    width: 25%;
+}
+.div1{
+    background-color: aqua; 
+}
+.div2{
+    background-color: rgb(20, 233, 23);
+}
+.div3{
+    background-color: rgb(235, 150, 13);
+}
+.div4{
+    background-color: rgb(255, 101, 216);
+}
+.div5{
+    background-color: rgb(16, 29, 175);
+    height:100%;
+}
+.div6{
+    background-color: rgb(255, 236, 69);
+}
+.div7{
+    background-color: rgb(105, 47, 14);
+}
+.div8{
+    background-color: rgb(126, 149, 161);
+}
+.div9{
+    background-color: rgb(58, 95, 137);
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px){
+.section1, .section3{
+    flex-wrap: wrap;
+}
+.div1, .div2, .div3, .div4, .div6, .div7, .div8, .div9 {
+    min-width: 50%;
+}
+.section2{
+    height:50%;
+}
+}
+@media screen and (max-width: 600px){
+   .section1, .section2, .section3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   }
+   .div1, .div2, .div3, .div4, .div6, .div7, .div8, .div9 {
+    height:25%;
+    width:100%;
+}
+.section2{
+    height:25%;
+}
+
+}
+    

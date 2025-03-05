@@ -1,0 +1,92 @@
+*,::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    flex-direction: row;
+    justify-content: stretch;
+    background-color: aqua;
+}
+div
+{ 
+    width: 20%;
+    height: 100vh;
+}
+
+.div1
+{
+    background-color: aqua;
+   
+}
+.div2
+{
+    background-color: greenyellow;
+   
+}
+.div3
+{
+    background-color: orange;
+    
+}
+.div4
+{
+    background-color: purple;
+
+}
+.div5
+{
+    background-color: blue;
+   
+}
+.div6
+{
+    background-color: yellow;
+
+}
+.div7
+{
+    background-color: grey;
+  
+}
+.div8
+{
+    background-color: lightskyblue;
+   
+}
+
+@media screen and (max-width: 900px) {
+    body{
+        /* display:flex;
+        flex-direction: row; */
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /* background-color: aqua; */
+        width: 100%;
+    }
+
+    div
+    { 
+        width: 25%;
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body{
+        /* display:flex;
+        flex-direction: row; */
+        /* flex-wrap: wrap;
+        justify-content: space-around; */
+        /* background-color: aqua; */
+        /* width: 100%; */
+    }
+    div
+    { 
+        width: 48%;
+        height: 30vh;
+    }
+}
+

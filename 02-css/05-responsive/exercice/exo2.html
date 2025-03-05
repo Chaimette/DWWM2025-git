@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Morgan">
+    <title>Menu Responsive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-container {
+            position: relative;
+        }
+        .menu-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 5px 10px;
+            cursor: pointer;
+            display: block;
+        }
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 50px 10px 0 10px;
+            display: none; /* Menu caché par défaut */
+        }
+        .menu-list li {
+            margin: 10px 0;
+        }
+        #menu-toggle {
+            display: none;
+        }
+        #menu-toggle:checked + .menu-button + .menu-list {
+            display: block;
+        }
+        
+        @media (min-width: 992px) {
+            .menu-button {
+                display: none;
+            }
+            .menu-list {
+                display: block;
+            }
+            .menu-list li:hover {
+                background-color: lightgray;
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 991px) {
+            .menu-list { 
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .menu-button {
+                display: none;
+            }
+        }
+       
+        @media (max-width: 600px) {
+            .menu-button {
+                display: block;
+            }
+            .menu-list {
+                display: none;
+            }
+        }
+        .menu-container {
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-button">Menu</label>
+        <ul class="menu-list">
+            <li>lien 1</li>
+            <li>lien 2</li>
+            <li>lien 3</li>
+            <li>lien 4</li>
+            <li>lien 5</li>
+        </ul>
+    </div>
+</body>
+</html>

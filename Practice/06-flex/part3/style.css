@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+}
+header{
+    background-color: purple;
+    height:25%;
+}
+.container {
+    height: 50%;
+    display: flex;
+}
+main{
+    background-color: rgb(127, 184, 237);
+    height: 100%;
+    width:85%;
+}
+nav{
+    background-color: rgb(97, 247, 28);
+    height: 100%;
+    width:15%;
+}
+footer{
+    background-color: rgb(19, 160, 35);
+    height: 25%;
+}
+
+@media screen and (max-width: 600px) {
+
+    .container {
+        height: 60%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    nav {
+        height: 60%;
+        width: 100%;
+    }
+    main {
+        width:100%
+    }
+   
+}

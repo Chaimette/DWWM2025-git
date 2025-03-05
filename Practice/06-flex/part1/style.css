@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 100vh;
+    display:flex;   
+}
+div{
+    width:13%;
+}
+.div1{
+    background-color: aqua; 
+}
+.div2{
+    background-color: rgb(20, 233, 23);
+}
+.div3{
+    background-color: rgb(235, 150, 13);
+}
+.div4{
+    background-color: rgb(255, 101, 216);
+}
+.div5{
+    background-color: rgb(16, 29, 175);
+}
+.div6{
+    background-color: rgb(255, 236, 69);
+}
+.div7{
+    background-color: rgb(105, 47, 14);
+}
+.div8{
+    background-color: rgb(126, 149, 161);
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px){
+main {
+    flex-wrap: wrap;
+}
+div{
+    min-width:25%;
+}
+}
+@media screen and (max-width: 600px){
+main{
+    gap:2%;
+    flex-wrap: wrap;
+    background-color: aqua;
+}
+div{
+    min-width:48%;
+}
+}
+    

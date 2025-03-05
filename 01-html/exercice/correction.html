@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- On indique la langue -->
+<html lang="fr">
+    <!-- Il y a jusqu'à 20 erreurs à trouver. -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trouver les erreurs</title>
+    <!-- La description doit contenir un texte et non des mots clefs -->
+    <meta name="description" content="Exercice sur les erreurs HTML">
+    <!-- le type doit correspondre à l'image -->
+    <link rel="shortcut icon" href="../../ressources/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- respecter la sémantique -->
+    <header id="accueil">
+        <!-- toujours un alt sur une image -->
+        <img src="../../ressources/images/icon/AFCI-LOGO.svg" alt="logo afci">
+        <!-- On respect l'ordre des titres -->
+        <h1>super site !</h1>
+    </header>
+    <h2>Navigation</h2>
+    <!-- les menu, ul et ol ne devraient contenir que des li -->
+    <menu>
+        <!-- Les fermetures des li -->
+        <li><a href="#accueil">accueil</a></li>
+        <!-- On peut retirer les target -->
+        <li><a href="#listeArticle">articles</a></li>
+        <!-- faire correspondre l'ordre du menu à l'ordre de la page -->
+        <li><a href="#contact">contact</a></li>
+    </menu>
+    <main>
+        <section id="listeArticle">
+            <!-- Les sections devraient avoir des titres -->
+            <h2>Liste des articles</h2>
+            <!-- On peut inverser article et section -->
+            <article>
+                <!-- ici des titres auraient été mieux -->
+                <h3>Le titre de mon premier article !</h3>
+                <!-- un seul main -->
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis recusandae sequi ex ullam, deleniti iure aspernatur quis eum quod voluptatum minima optio commodi unde quas dolore iste vero in saepe?
+                </p>
+            </article>
+            <article>
+                <h3>Le titre de mon second article !</h3>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis recusandae sequi ex ullam, deleniti iure aspernatur quis eum quod voluptatum minima optio commodi unde quas dolore iste vero in saepe?
+                </p>
+            </article>
+        </section>
+    </main>
+    <!-- un seul main -->
+    <footer>
+        <!-- Les attributs action et method -->
+        <form id="contact" action="./correction.html" method="post">
+            <!-- placeholder à la place de value -->
+            <input type="text" name="nom" placeholder="Votre nom !">
+            <br>
+            <!-- Le name ne doit pas se répéter -->
+            <input type="text" name="prenom" placeholder="votre prénom !">
+            <br>
+            <!-- Pour un gros texte, un textarea est mieux -->
+            <textarea name="commentaire" placeholder="votre commentaire !"></textarea>
+            <br>
+            <input type="submit" value="Envoyer">
+        </form>
+    </footer>
+</body>
+</html>
