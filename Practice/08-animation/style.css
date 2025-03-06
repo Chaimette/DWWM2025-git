@@ -1,0 +1,129 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.btn1 {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: gray;
+    border: 2px solid gray;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s;
+    transform-style: preserve-3d;
+}
+
+.btn1:focus {
+    outline: none;
+    color: red;
+    border-color: red;
+    background-color: rgb(206, 133, 133);
+    animation: rotate-btn 1s linear forwards;
+}
+
+
+
+@keyframes rotate-btn {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+/* ///////////// */
+.btn2 {
+    background-color: rgb(252, 68, 98);
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 10px 10px 3px rgb(151, 150, 150);
+    cursor: pointer;
+    /* transition: all 0.3s ease; */
+    border:none;
+}
+
+.btn2:hover {
+    transform: translateY(5px);
+    box-shadow: 10px 10px 10px rgb(88, 87, 87); 
+    transition: transform 0.5s ;
+}
+
+.btn2:active {
+    transform: translateY(5px) rotateX(360deg); 
+    box-shadow: 10px 10px 10px rgb(88, 87, 87);
+    transition: transform 0.5s ;
+
+}
+
+
+/* /////////// BOUTON 4 ///////////////*/
+
+.btn4 {
+    color: purple;
+    background-color: whitesmoke;
+
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.btn4::before, .btn4::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: purple;
+    transition: all 0.3s ease;
+}
+
+.btn4::before {
+    width: 100%;
+    top: 0;
+    left: -100%;
+}
+
+.btn4::after {
+    width: 100%;
+    bottom: 0;
+    right: -100%;
+}
+.btn4:hover{
+    color: black;
+}
+.btn4:active {
+    background-color: whitesmoke;
+    color: rgb(252, 68, 98);
+}
+
+.btn4:active::before {
+    background-color: rgb(252, 68, 98); 
+}
+
+.btn4:active::after {
+    background-color: rgb(252, 68, 98);
+}
+
+
+.btn4:hover::before {
+    left: 0;
+}
+
+.btn4:hover::after {
+    right: 0;
+}
