@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Le Juste Prix</title>
+  </head>
+  <body>
+    <div class="game-container" id="gameContainer">
+      <div class="card card-front">
+        <h2>?</h2>
+      </div>
+      <div class="card card-back">
+        <h2 id="mysteryNumber"></h2>
+        <button id="restartButton">Recommencer</button>
+      </div>
+      <div class="game-interface">
+        <h2>Le Juste Prix</h2>
+        <input
+          type="number"
+          id="guessInput"
+          min="1"
+          max="100"
+          placeholder="Entre 1 et 100"
+        />
+        <button id="submitGuess">Valider</button>
+        <p id="message"></p>
+        <p id="attempts"></p>
+      </div>
+    </div>
+    <!-- <div id="resultImageContainer" class="result-image-container">
+      <img id="resultImage" src="" alt="Résultat du jeu" class="result-image" />
+    </div> -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="Résultat du jeu">
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <style>
+        *, ::before, ::after
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{overflow: hidden;
+            font-size: 16px;
+            font-family: Arial, sans-serif;}
+        canvas{border: 1px solid black; position: absolute; }
+        #canvas-container{
+            position: relative;
+            width: 600px;
+            height: 600px;
+        }
+        #controls{
+            display: flex;
+            gap: 10px;
+            margin: 10px 0 10px 20px;
+            align-items: center;
+        }
+        button{
+            padding: 5px 10px;
+            background-color: #a2a6aa;
+            color: rgb(26, 25, 25);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="script2.js" defer></script>
+</head>
+<body>
+    <div id="controls">
+        <button id="clear-button">Clear</button>
+        <button id="undo-button">Undo</button>
+        <button id="redo-button">Redo</button>
+        <button id="save-button">Save</button>
+        <label for="color-picker-bg">Background Color</label>
+        <input type="color" id="color-picker-bg" value="#000000">
+        <label for="color-picker">Pick a color</label>
+
+        <input type="color" id="color-picker" value="#000000">
+        <label for="size-slider">Brush Size</label>
+
+        <input type="range" id="size-slider" min="1" max="50" value="5" >
+    </div>
+    <div id="canvas-container">
+        <canvas id="bg-canvas"></canvas>
+        <canvas id="draw-canvas"></canvas>
+    </div>
+</body>
+</html>

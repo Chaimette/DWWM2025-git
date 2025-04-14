@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+select {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.appli {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.game-container {
+  width: 300px;
+  position: relative;
+  perspective: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background-color: #a93fff;
+  margin: 20px auto;
+  border-radius: 10px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  left: 15%;
+  transform: translateX(-25%);
+  text-align: center;
+
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.game-container.flipped .card-front {
+  transform: rotateY(180deg);
+}
+
+.game-container.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
+.game-interface {
+  margin-top: 230px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.game-interface h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.game-interface input {
+  padding: 10px;
+  width: 150px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.game-interface button {
+  padding: 10px 20px;
+  background-color: #67279b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.game-interface button:hover {
+  background-color: #532080;
+}
+
+.game-interface p {
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+#message {
+  font-weight: bold;
+  font-size: larger;
+  min-height: 24px;
+  margin: 10px 0;
+}
+
+.restart-button {
+  margin-top: 20px !important;
+  background-color: #444 !important;
+}
+
+.restart-button:hover {
+  background-color: #333 !important;
+}
+
+.description {
+  font-size: 16px;
+  color: #fefefe;
+  padding: 10px 10px 0 10px;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: black;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 300px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.modal-content p {
+  font-size: 18px;
+  color: #555;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  object-fit: cover;
+}
+.slide.active {
+  opacity: 1;
+}
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.slider-button {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.indicators {
+  display: flex;
+  gap: 5px;
+  margin: 0 10px;
+}
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+}
+.indicator.active {
+  background-color: white;
+}
+.paint-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.paint-canvas {
+  background-color: white;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  height: 90%;
+}
+.paint-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}

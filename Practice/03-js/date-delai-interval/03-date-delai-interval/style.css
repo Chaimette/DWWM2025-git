@@ -1,0 +1,136 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  background-color: cadetblue;
+}
+
+main {
+  background-color: darksalmon;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+footer {
+  text-align: center;
+  background-color: honeydew;
+}
+
+.bar {
+  height: 30px;
+  position: relative;
+  width: 100%;
+  background-color: gray;
+}
+
+.progress {
+  background-color: rgb(11, 200, 11);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  transition: width 0.3s;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+  background: url("/04-javascript/03-date-delai-interval/exercice/OIP.jfif")
+    no-repeat center;
+  background-size: contain;
+  margin: 2rem auto;
+}
+
+.center {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.hour,
+.minute,
+.second {
+  position: absolute;
+  background-color: #000;
+  transform-origin: bottom center;
+  bottom: 50%;
+  left: 50%;
+  border-radius: 4px;
+}
+
+.hour {
+  width: 6px;
+  height: 70px;
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 7;
+  /*12 heures (12 * 60 * 60 = 43200 secondes) */
+  animation: rotate-hour 43200s linear infinite;
+}
+
+.minute {
+  width: 4px;
+  height: 100px;
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 8;
+  /* step(60) permet le mouvement saccadé // 360° en 1 heure, 60*60 */
+  animation: rotate-minute 3600s steps(60) infinite;
+}
+
+.second {
+  width: 2px;
+  height: 120px;
+  background-color: black;
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 9;
+  animation: rotate-second 60s steps(60) infinite;
+}
+
+@keyframes rotate-hour {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-minute {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-second {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}

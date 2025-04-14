@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculatrice</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .calculator-container {
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    .calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .display {
+      grid-column: 1 / -1;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: right;
+      color: white;
+      border-radius: 5px;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+    
+    .previous-operand {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.75);
+      min-height: 24px;
+    }
+    
+    .current-operand {
+      font-size: 2rem;
+      min-height: 48px;
+    }
+    
+    button {
+      border: none;
+      font-size: 1.5rem;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .span-two {
+      grid-column: span 2;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div id="calculator-container" class="calculator-container"></div>
+  
+  <script type="module">
+    import Calculator from './Calculator.js';
+    const calculator = new Calculator('calculator-container');
+  </script>
+</body>
+</html>

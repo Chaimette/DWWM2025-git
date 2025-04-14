@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <script src="languages.js" defer></script>
+    <script src="cat.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercice fetch</title>
+  </head>
+  <body>
+    <section id="super">
+      <h1>Super Hero Squad</h1>
+
+      <div class="hero-selection">
+        <h2>Sélectionnez des héros:</h2>
+        <div id="hero-checkboxes"></div>
+      </div>
+
+      <div id="squad-info"></div>
+      <div id="hero-cards" class="hero-cards"></div>
+    </section>
+
+    <section id="translation">
+      <h1 id="main-title">Sélecteur de Langues</h1>
+
+      <select id="language-selector"></select>
+
+      <div class="content">
+        <h2 id="content-title"></h2>
+        <p id="content-description"></p>
+        <p id="content-info"></p>
+        <img src="./klingon.avif" alt="worf staring meme" class="hidden">
+      </div>
+    </section>
+
+    <section id="external-link">
+      <h1>API des miaou</h1>
+      <div class="btn-container">
+      <button id="fetch-cat">Get a miaou</button> </div>
+      
+      <div id="cat-container" class="cat-container" style="display: none;">
+          <img id="cat-image" class="cat-image" src="" alt="Image de chat">
+          
+          <div class="cat-info">
+              <h2>Informations sur l'image de miaou:</h2>
+              <div id="cat-data"></div>
+          </div>
+          
+          <div class="cat-info">
+              <h2>Données JSON brutes:</h2>
+              <pre id="raw-json"></pre>
+          </div>
+      </div>
+    </section>
+  </body>
+</html>

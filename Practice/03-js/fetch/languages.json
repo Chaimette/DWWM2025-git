@@ -1,0 +1,25 @@
+{
+    "languages": [
+        {
+            "code": "fr",
+            "name": "Français",
+            "title": "Bienvenue sur notre site",
+            "description": "Ceci est un exemple de texte en français. Vous pouvez changer la langue en utilisant le sélecteur ci-dessus.",
+            "info": "Le français est parlé par environ 300 millions de personnes dans le monde."
+        },
+        {
+            "code": "en",
+            "name": "English",
+            "title": "Welcome to our website",
+            "description": "This is an example text in English. You can change the language using the selector above.",
+            "info": "English is spoken by approximately 1.5 billion people worldwide."
+        },
+        {
+            "code": "tlh",
+            "name": "Klingon",
+            "title": "nuqneH!",
+            "description": "vam 'oH Klingon mu'ghom. toDujwIj vIje' 'e' vIneH. ",
+            "info": "Klingon mu' 'oH 3 'uS 'oHtaH."
+        }
+    ]
+}
