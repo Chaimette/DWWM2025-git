@@ -2,7 +2,7 @@ export default class Ball {
   constructor(canvas, x, y) {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
-
+  
     this.x = x;
     this.y = y;
     // Rayon défini entre 10 et 30px
@@ -29,6 +29,7 @@ export default class Ball {
   }
 
   update(balls) {
+
     // On détecte les collisions avec les bords du canvas et la direction est inversée
     if (this.x + this.radius > this.canvas.width || this.x - this.radius < 0) {
       this.dx = -this.dx;

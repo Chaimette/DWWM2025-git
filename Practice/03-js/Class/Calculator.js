@@ -57,13 +57,6 @@ export default class Calculator {
       );
     });
 
-    this.container.querySelector(".sous").addEventListener("click", (event) => {
-      if (this.operation === undefined && this.currentOperand !== "0") {
-        this.toggleNegative();
-      } else {
-        this.chooseOperation(event.target.textContent);
-      }
-    });
     this.container
       .querySelector(".decimal")
       .addEventListener("click", () => this.appendDecimal());
@@ -204,7 +197,7 @@ export default class Calculator {
         return;
     }
 
-    if (Number.isInteger(computation)) {
+    if (Number.isInteger(computation)) {56
       this.currentOperand = computation.toString();
     } else {
       this.currentOperand = parseFloat(computation.toFixed(10)).toString();

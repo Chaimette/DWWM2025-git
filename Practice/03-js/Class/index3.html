@@ -1,107 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./main3.js"></script>
+    </script>
+    <title>Sliders Class</title>
     <style>
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-}
-        .slider-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  object-fit: cover;
-}
-.slide.active {
-  opacity: 1;
-}
-.slider-controls {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-.slider-button {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.indicators {
-  display: flex;
-  gap: 5px;
-  margin: 0 10px;
-}
-.indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  cursor: pointer;
-}
-.indicator.active {
-  background-color: white;
-}
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .slider-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        object-fit: cover;
+      }
+      .slide.active {
+        opacity: 1;
+      }
+      .slider-controls {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .slider-button {
+        background-color: rgba(255, 255, 255, 0.7);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .indicators {
+        display: flex;
+        gap: 5px;
+        margin: 0 10px;
+      }
+      .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+      }
+      .indicator.active {
+        background-color: white;
+      }
     </style>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="slider-container" id="slider-container-1"></div>
     <div class="slider-container" id="slider-container-2"></div>
-
-    <script type="module">
-  import Slider from './Slider.js';
-
-const slider1 = new Slider('slider-container-1');
-const imagePaths1 = [
-  "images/img1.jpg",
-  "images/img2.jpg",
-  "images/img3.jpg",
-];
-slider1.initSlider(imagePaths1, 3000);
-slider1.startSlider();
-
-const slider2 = new Slider('slider-container-2');
-const imagePaths2 = [
-  "images/img4.jpg",
-  "images/img5.jpg",
-  "images/nice.gif",
-];
-slider2.initSlider(imagePaths2, 5000);
-slider2.startSlider();
-        
-      </script>
-</body>
+    <div class="slider-container" id="slider-container-3"></div>
+    
+  </body>
 </html>
