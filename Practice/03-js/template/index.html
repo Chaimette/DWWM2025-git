@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <title>Templates</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .exo1 {
+        border: solid;
+        padding: 0 30px 20px 30px;
+      }
+      h1 {
+        text-align: center;
+        margin: 30px 0;
+        font-size: 24px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      #template {
+        border: solid;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input,
+      textarea {
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      textarea {
+        min-height: 100px;
+      }
+      button {
+        background-color: #b7a6e0;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #8f82b1;
+      }
+      .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="exo1">
+      <h1>Formulaire</h1>
+      <template id="template">
+        <div class="form-group">
+          <label></label>
+          <div class="input-container"></div>
+          <div class="error"></div>
+        </div>
+      </template>
+      <form id="form"></form>
+      <button id="add-field">Ajouter un champ</button>
+      <button id="submit-form" type="submit">Envoyer</button>
+    </section>
+  </body>
+</html>
