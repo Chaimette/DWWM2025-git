@@ -10,6 +10,14 @@ const additionalFieldTypes = [
   { label: "Téléphone", type: "tel", name: "phone" },
   { label: "date", type: "date", name: "date" },
   { label: "Age", type: "number", name: "age" },
+  { label: "Sexe", 
+    type: "select", 
+    name: "sex",
+    options: [
+      { value: "male", label: "Homme" },
+      { value: "female", label: "Femme" },
+      { value: "other", label: "Autre" }
+    ]},
 ];
 
 let fieldCounter = 0;
@@ -31,7 +39,17 @@ function generateField(fieldData, isRemovable = false) {
   let inputElement;
   if (fieldData.type === "textarea") {
     inputElement = document.createElement("textarea");
-  } else {
+  } else if (fieldData.type === "select") {
+    inputElement= document.createElement("select");
+   
+    fieldData.options.forEach((option) => {
+      const optionElement = document.createElement("option");
+      optionElement.value = option.value;
+      optionElement.textContent = option.label;
+      inputElement.appendChild(optionElement);
+    });
+  }
+  else {
     inputElement = document.createElement("input");
     inputElement.type = fieldData.type;
   }
@@ -78,6 +96,11 @@ function validateField(field) {
 
   if (field.type === "tel" && !validatePhone(field.value)) {
     errorElement.textContent = "Veuillez entrer un numéro de téléphone valide";
+    errorElement.style.display = "block";
+    return false;
+  }
+  if (field.tagName.toLowerCase() === "select" && field.value === "") {
+    errorElement.textContent = "Veuillez sélectionner une option";
     errorElement.style.display = "block";
     return false;
   }
@@ -175,7 +198,7 @@ function initForm() {
     .addEventListener("click", function (e) {
       e.preventDefault();
       let isValid = true;
-      const inputs = formElement.querySelectorAll("input, textarea");
+      const inputs = formElement.querySelectorAll("input, textarea, select");
 
       inputs.forEach((input) => {
         if (!validateField(input)) {
@@ -185,10 +208,7 @@ function initForm() {
 
       if (isValid) {
         alert("Envoyé avec succès!");
-        // console.log(
-        //   "Données du formulaire:",
-        //   Object.fromEntries(new FormData(formElement))
-        // );
+
       }
     });
   updateFieldButtonStatus();
