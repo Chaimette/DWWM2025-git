@@ -5,134 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <title>Evaluation E-Shop</title>
+    <title>Boutique en ligne</title>
+    <style></style>
   </head>
   <body>
     <header>
-      <nav>
-        <div class="logo">GeekStore</div>
-        <div class="nav-links">
-          <a href="#" id="home-link">Accueil</a>
-          <a href="#" id="auth-link" style="padding: 0 10px 0 10px"
-            >Connexion</a
-          >
-          <a href="#" id="admin-link" style="display: none; padding-right: 10px"
-            >Admin</a
-          >
-          <div class="cart-icon" id="cart-icon">
-            🛒 <span class="cart-count" id="cart-count">0</span>
+      <div class="header-content">
+        <div class="logo">MyShop</div>
+        <div class="mobile-menu-container">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <div id="menuList">
+            <ul>
+              <li><a href="#" id="home-link">Accueil</a></li>
+              <li><a href="#" id="product-link">Produits</a></li>
+              <li><a href="#" id="auth-link">Connexion</a></li>
+              <li><a href="#" id="admin-link" style="display: none">Admin</a></li>
+
+            </ul>
+          </div>
+          <div class="nav-links" id="navLinks">
+            <a href="#" id="home-link">Accueil</a>
+            <a href="#" id="product-link">Produits</a>
+
+            <a href="#" id="auth-link">Connexion</a>
+            <a href="#" id="admin-link" style="display: none">Admin</a>
+
+            <div class="cart-icon" id="cartIcon">
+              🛒
+              <span class="cart-count" id="cartCount">0</span>
+            </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
+
     <main>
-      <!-- Barre de boutons / recherche -->
-      <div class="controls">
-        <div class="search-bar">
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Chargement des produits...</div>
+      </div>
+
+      <div class="search-bar">
+        <div id="searchContainer">
           <input
             type="text"
-            id="search-input"
+            id="searchInput"
             placeholder="Rechercher des produits..."
           />
-          <button id="search-button">🔍</button>
+          <div id="searchSuggestions" class="suggestions"></div>
         </div>
-        <div class="sort-filters">
-          <select id="category-filter">
-            <option value="">Toutes les catégories</option>
-          </select>
-          <select id="sort-by">
-            <option value="">Trier par</option>
-            <option value="price-asc">Prix croissant</option>
-            <option value="price-desc">Prix décroissant</option>
-            <option value="name-asc">Nom A-Z</option>
-            <option value="name-desc">Nom Z-A</option>
-          </select>
+        <button id="search-button" class="norm-button">Rechercher</button>
+      </div>
+      <div
+        class="category-filter"
+        id="categoryFilter"
+        style="display: none"
+      ></div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </main>
+
+    <div class="modal" id="productModal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <div class="product-detail" id="productDetail"></div>
+      </div>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+      <div class="cart-header">
+        <h2>Votre Panier</h2>
+        <span class="cart-close" id="closeCart">&times;</span>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="empty-cart">
+          <div class="empty-cart-icon">🛒</div>
+          <p>Votre panier est vide</p>
         </div>
       </div>
-      <div id="products-container" class="products-grid">
-            <!-- <div class="loader"></div> -->
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cartTotal">0,00 €</span>
         </div>
-
-
-      <!-- Modal Article qui s'affiche au clique-->
-      <div class="modal-overlay" id="product-modal" style="display: none;">
-        <div class="modal">
-            <button class="modal-close" id="modal-close">&times;</button>
-            <div class="product-detail" id="product-detail">
-                <!-- Détails chargés ici , titre, img, description, ...-->
-            </div>
-        </div>
+        <button class="checkout-btn norm-button" id="checkoutBtn">
+          Passer la commande
+        </button>
+      </div>
     </div>
 
-    
-      <!-- PANIER qui slide à partir de la droite -->
-      <div class="cart-panel" id="cart-panel">
-        <button class="cart-close" id="cart-close">&times;</button>
-        <div class="cart-header">Votre Panier</div>
-        <div class="cart-items" id="cart-items">
-            <!-- Le contenu du panier est affiché ici -->
-        </div>
+    <div class="notification" id="notification"></div>
 
-        <div class="cart-summary">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total">0.00 €</span>
-            </div>
-            <button class="cart-checkout" id="cart-checkout">Passer la commande</button>
-        </div>
-    </div>
-
-      <!-- Modal pour l'authentification -->
-
-
-      <!-- Notifs, on va tester même si triggering RIP TT_TT -->
-       
-    </main>
-    <!-- ADMIN PANEL -->
-    <div id="admin-panel" class="admin-panel" style="display: none;">
-        <div class="admin-header">
-            <h2>Panneau d'administration</h2>
-            <button id="add-product-btn" class="btn btn-primary">Ajouter un produit</button>
-        </div>
-<!--  form ajout d'article  -->        
-         <div id="product-form-container" class="admin-form" style="display: none;">
-            <h3 id="form-title">Ajouter un produit</h3>
-            <form id="product-form" class="auth-form">
-                <input type="hidden" id="product-id">
-                <div class="form-group">
-                    <label for="product-title">Titre</label>
-                    <input type="text" id="product-title" required>
-                </div>
-                <div class="form-group">
-                    <label for="product-price">Prix</label>
-                    <input type="number" id="product-price" step="0.01" min="0" required>
-                </div>
-                <div class="form-group">
-                    <label for="product-category">Catégorie</label>
-                    <select id="product-category" required>
-                        <option value="">Sélectionner une catégorie</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="product-description">Description</label>
-                    <textarea id="product-description" rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="product-image">Image URL</label>
-                    <input type="url" id="product-image" required>
-                </div>
-                <div class="product-actions">
-                    <button type="button" id="cancel-product-btn" class="btn btn-primary">Annuler</button>
-                    <button type="submit" class="btn btn-accent">Enregistrer</button>
-                </div>
-            </form>
-        </div>
-        
-        <div class="admin-products" id="admin-products">
-            <!-- produits admin ici, avec boutons modifier et supprimer -->
-            <div class="loader"></div>
-        </div>
-    </div>
     <footer>
       <div class="mentions">
         <a href="">A Propos</a>
