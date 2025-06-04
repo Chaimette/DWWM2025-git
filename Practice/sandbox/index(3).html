@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PORTFOLIO de Valentin SPATAFORA</title>
+    <link href="./style.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <script src="script.js" defer></script>
+    <meta content="Valentin SPATAFORA" name="author" />
+    <meta
+      content="Bienvenue sur le portfolio de Valentin SPATAFORA"
+      name="description"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="section">
+        <div class="header-title">
+          <div>
+            <img alt="Avatar homme" id="avatar" src="./img/avatar-homme.png" />
+          </div>
+          <div>
+            <p id="name">VALENTIN SPATAFORA</p>
+          </div>
+        </div>
+        <div class="nav-container">
+          <ul>
+            <li class="li"><a href="#accueil">Accueil</a></li>
+            <li class="li"><a href="#a_propos">A propos</a></li>
+            <li class="li"><a href="#contact">Contact</a></li>
+            <li class="li"><a href="#projets">Projets</a></li>
+            <li class="li">
+              <a
+                download="CV SPATAFORA VALENTIN"
+                href="./CV SPATAFORA VALENTIN.pdf"
+                >CV</a
+              >
+            </li>
+          </ul>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </header>
+    <div id="section-container">
+      <section id="accueil">
+        <div>
+          <h1>DÉVELOPPEUR-WEB</h1>
+        </div>
+      </section>
+      <section id="a_propos">
+        <div id="profile">
+          <img
+            alt="Photo de profil"
+            id="myPhoto"
+            src="./img/avatar-homme.png"
+          />
+          <div class="logos-container">
+            <img
+              alt="logo_html"
+              class="logo"
+              id="logoHtml"
+              src="./img/logo_html.png"
+            />
+            <img
+              alt="logo_css"
+              class="logo"
+              id="logoCss"
+              src="./img/logo_css.png"
+            />
+            <img
+              alt="logo_js"
+              class="logo"
+              id="logoJs"
+              src="./img/logo_js.png"
+            />
+          </div>
+        </div>
+        <div id="info">
+          <h1>A propos de moi :</h1>
+          <p>
+            Hello ! Je m'appelle Valentin Spatafora, Actuellement en formation
+            Développeur Web et Web Mobile. Je recherche un stage pour valider
+            mes acquis. N'hésitez pas à me contacter.
+          </p>
+        </div>
+      </section>
+      <section id="section-contact">
+        <div id="contact">
+          <h1>Contactez moi :</h1>
+          <form action="https://formspree.io/f/xpwpgalq" method="post">
+            <div class="input-group">
+              <input
+                id="nom"
+                name="nom"
+                placeholder="Nom :"
+                required=""
+                type="text"
+              />
+              <input
+                id="prenom"
+                name="prenom"
+                placeholder="Prénom :"
+                type="text"
+              />
+            </div>
+            <div class="input-group">
+              <input
+                id="mail"
+                name="mail"
+                placeholder="E-mail :"
+                required=""
+                type="email"
+              />
+              <input
+                id="phone"
+                name="phone"
+                placeholder="Téléphone :"
+                type="tel"
+              />
+            </div>
+            <input
+              id="object"
+              name="object"
+              placeholder="Objet :"
+              required=""
+              type="text"
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Message :"
+              required=""
+            ></textarea>
+            <button class="li" type="submit">Envoyer</button>
+          </form>
+        </div>
+      </section>
+      <section id="section-projets">
+
+        <div id="projets-container">
+          <h1>Mes projets :</h1>
+
+          <div id="mesProjets">
+
+            <div class="projets">
+
+              <div class="titre-projets">
+                <h3>Shop-Élite</h3>
+              </div>
+              <div class="img-cont">
+                <img
+                  alt="Image du projet"
+                  class="img-projet"
+                  src="./img/img3.jpg"
+                />
+              </div>
+
+            </div>
+
+            <div class="projets">
+
+              <div class="titre-projets">
+                <h3>Robots-Délices</h3>
+              </div>
+              <div class="img-cont">
+                <img
+                  alt="Image du projet"
+                  class="img-projet"
+                  src="./img/img3.jpg"
+                />
+              </div>
+
+            </div>
+
+            <div class="projets">
+              <div class="titre-projets">
+                <h3>À venir</h3>
+              </div>
+              <div class="img-cont">
+                <img
+                  alt="Image du projet"
+                  class="img-projet"
+                  src="./img/img3.jpg"
+                />
+              </div>
+            </div>
+            <div class="projets">
+              <div class="titre-projets">
+                <h3>À venir</h3>
+              </div>
+              <div class="img-cont">
+                <img
+                  alt="Image du projet"
+                  class="img-projet"
+                  src="./img/img3.jpg"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div>
+        <a
+          href="https://www.linkedin.com/in/valentin-spatafora-2a7b59211/"
+          target="_blank"
+          ><img alt="Linkedin" class="logoImg" src="./img/logo_linkedin.png"
+        /></a>
+        <a href="https://github.com/Valentinspa" target="_blank"
+          ><img alt="Github" class="logoImg" src="./img/logo_github.png"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>
