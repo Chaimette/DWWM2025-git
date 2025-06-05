@@ -1,0 +1,17 @@
+{
+    "jdupont": {
+        "prenom": "Jean",
+        "bio": "Pseudo développeur web junior.",
+        "photo": ".\/uploads\/1749126031-68418b8f868df1.88416755-jdupont-logo-fandom.png"
+    },
+    "amartin": {
+        "prenom": "Alice",
+        "bio": "Étudiante en web mobile.",
+        "photo": "..\/uploads\/amartin.png"
+    },
+    "JeanNeige": {
+        "prenom": "Jon",
+        "bio": "Member of the Night&#039;s Watch. Known to know nothing. ",
+        "photo": ".\/uploads\/1749126191-68418c2fe34868.70910321-JeanNeige-default-1.png"
+    }
+}
