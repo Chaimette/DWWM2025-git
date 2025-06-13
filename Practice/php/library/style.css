@@ -17,5 +17,9 @@ body {
 }
 
 form{
-    margin: 10vh 0 40px 0;
+    margin: 40px 0 40px 0;
+}
+
+h2 {
+    margin-top: 50px;
 }

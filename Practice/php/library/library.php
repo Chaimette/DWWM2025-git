@@ -7,15 +7,14 @@ $livres = [
 ];
 $error = [];
 
-// Étape 2 : Si formulaire soumis, ajouter un nouveau livre
+// Si formulaire soumis, ajouter un nouveau livre
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["add"])) {
     $titre = $_POST['titre'] ?? '';
     $auteur = $_POST['auteur'] ?? '';
-    
-    if((empty($_POST["titre"])) ||(empty($_POST["auteur"])) ) {
+
+    if ((empty($_POST["titre"])) || (empty($_POST["auteur"]))) {
         $error["input"] = "Merci de remplir tous les champs";
-    }
-    else {
+    } else {
         $titre = trim($_POST["titre"]);
         $titre = stripslashes($titre);
         $titre = htmlspecialchars($titre);
@@ -31,23 +30,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["add"])) {
         $_POST['titre'] = '';
         $_POST['auteur'] = '';
     }
-
-
-
 }
 
 ?>
 
-<!-- Étape 3 : Formulaire HTML -->
- <h2>Ajouter un livre</h2>
+<h2>Ajouter un livre</h2>
 <form method="POST">
-    <input type="text" name="titre" placeholder="Titre du livre" >
-    <input type="text" name="auteur" placeholder="Auteur" >
+    <input type="text" name="titre" placeholder="Titre du livre">
+    <input type="text" name="auteur" placeholder="Auteur">
     <button type="submit" name="add">Ajouter</button>
-    <span class="error"><?= $error["input"]??"" ?></span>
+    <span class="error"><?= $error["input"] ?? "" ?></span>
 </form>
 
-<!-- Étape 4 : Affichage des livres -->
+
 <h2>Liste des livres :</h2>
 <ul>
     <?php foreach ($livres as $livre): ?>

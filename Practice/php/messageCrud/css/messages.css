@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.header {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logout-btn {
+  background-color: rgb(128, 129, 129);
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.logout-btn:hover {
+  background-color: rgb(73, 73, 73);
+}
+.message-form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.message-card {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.message-title {
+  font-size: 20px;
+  font-weight:bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+.message-content {
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 10px;
+}
+.message-date {
+  font-size: 12px;
+  color: #999;
+}
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+button {
+  background-color: rgb(128, 129, 129);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(73, 73, 73);
+}
+a {
+  background-color: rgb(35, 50, 92);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+}
+a:hover{
+  background-color: rgb(64, 92, 168) ;
+}
+.btn {
+  margin: 20px 0;
+}
+.success {
+  color: green;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+.error {
+  color: red;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+.no-messages {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 40px;
+}

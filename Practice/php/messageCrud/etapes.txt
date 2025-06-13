@@ -1,0 +1,48 @@
+Structure de base : Créer les fichiers SQL et la structure de dossiers
+Connexion à la base de données : Établir la connexion PHP/MySQL
+Système d'authentification : Login/logout avec base de données
+Affichage des messages : Récupérer et afficher les messages d'un utilisateur
+Ajout de messages : Formulaire pour créer de nouveaux messages
+
+1. Structure de base de données
+
+Pourquoi : On a besoin de stocker les utilisateurs et leurs messages
+Comment : Deux tables avec une relation (clé étrangère)
+Fichier : tables.sql pour créer la structure
+
+2. Configuration de connexion
+
+Pourquoi : Centraliser la configuration MySQL et PDO
+Comment : Un fichier config.php avec les paramètres et une fonction de connexion
+Avantage : Réutilisable dans tous les autres fichiers
+
+3. Système d'authentification
+
+Pourquoi : Sécuriser l'accès et identifier l'utilisateur
+Comment :
+
+login.php : Formulaire de connexion avec vérification mot de passe hashé
+logout.php : Destruction de la session
+Sessions PHP pour maintenir l'état connecté
+
+
+
+4. Affichage des messages
+
+Pourquoi : Répondre à l'exigence "récupérer en GET l'id d'un utilisateur"
+Comment :
+
+messages.php accepte ?user_id=X en paramètre
+Si pas de paramètre, utilise l'utilisateur connecté
+Requête SQL avec WHERE user_id = ?
+
+
+
+5. Ajout de messages
+
+Pourquoi : Permettre aux utilisateurs connectés de publier
+Comment :
+
+Formulaire intégré dans messages.php
+Vérification que l'utilisateur est connecté
+Insertion en base avec INSERT INTO messages
