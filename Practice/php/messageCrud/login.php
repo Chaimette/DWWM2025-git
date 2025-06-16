@@ -48,12 +48,6 @@ if (isset($_SESSION['user_id'])) {
     <div class="container">
         <h1>Connexion</h1>
         
-        <div class="info">
-            <strong>Compte test :</strong><br>
-            Nom d'utilisateur : testuser<br>
-            Mot de passe : password
-        </div>
-        
         <?php if ($error_message): ?>
             <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
         <?php endif; ?>
