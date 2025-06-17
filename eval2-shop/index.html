@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Boutique en ligne</title>
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">MyShop</div>
+        <div class="mobile-menu-container">
+          <button class="menu-toggle" id="menuToggle">☰</button>
+          <div id="menuList">
+            <ul>
+              <li><a href="#" id="home-link">Accueil</a></li>
+              <li><a href="#" id="product-link">Produits</a></li>
+              <li><a href="#" id="auth-link">Connexion</a></li>
+              <li><a href="#" id="admin-link" style="display: none">Admin</a></li>
+
+            </ul>
+          </div>
+          <div class="nav-links" id="navLinks">
+            <a href="#" id="home-link">Accueil</a>
+            <a href="#" id="product-link">Produits</a>
+
+            <a href="#" id="auth-link">Connexion</a>
+            <a href="#" id="admin-link" style="display: none">Admin</a>
+
+            <div class="cart-icon" id="cartIcon">
+              🛒
+              <span class="cart-count" id="cartCount">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Chargement des produits...</div>
+      </div>
+
+      <div class="search-bar">
+        <div id="searchContainer">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Rechercher des produits..."
+          />
+          <div id="searchSuggestions" class="suggestions"></div>
+        </div>
+        <button id="search-button" class="norm-button">Rechercher</button>
+      </div>
+      <div
+        class="category-filter"
+        id="categoryFilter"
+        style="display: none"
+      ></div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </main>
+
+    <div class="modal" id="productModal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <div class="product-detail" id="productDetail"></div>
+      </div>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+      <div class="cart-header">
+        <h2>Votre Panier</h2>
+        <span class="cart-close" id="closeCart">&times;</span>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="empty-cart">
+          <div class="empty-cart-icon">🛒</div>
+          <p>Votre panier est vide</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cartTotal">0,00 €</span>
+        </div>
+        <button class="checkout-btn norm-button" id="checkoutBtn">
+          Passer la commande
+        </button>
+      </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <footer>
+      <div class="mentions">
+        <a href="">A Propos</a>
+        <a href="">Mentions légales</a>
+        <a href="">Livraison et politique de remboursement</a>
+        <a href="">Nous contacter</a>
+      </div>
+      <div class="copy">GeekStore Copyright Whatever I should write here</div>
+    </footer>
+  </body>
+</html>
