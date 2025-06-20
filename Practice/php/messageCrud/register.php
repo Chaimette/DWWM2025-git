@@ -90,23 +90,36 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['inscription']))
 }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Inscription</title>
+</head>
+<body>
+    
+
+    <div class="container">
+    <h1>Inscription</h1>
 <form action="./register.php" method="post">
-    <label for="username">Nom d'Utilisateur :</label>
-    <input type="text" name="username" id="username" required>
+    <input type="text" name="username" id="username" placeholder="Votre nom d'utilisateur" required>
     <span class="erreur"><?php echo $error["username"]??""; ?></span>
     <br>
-    <label for="email">Adresse Email :</label>
-    <input type="email" name="email" id="email" required>
+    <input type="email" name="email" id="email" placeholder="Adresse email" required>
     <span class="erreur"><?php echo $error["email"]??""; ?></span> 
     <br>
-    <label for="password">Mot de passe :</label>
-    <input type="password" name="password" id="password" required>
+    <input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
     <span class="erreur"><?php echo $error["password"]??""; ?></span> 
     <br>
-    <label for="passwordBis">Confirmation du mot de passe :</label>
-    <input type="password" name="passwordBis" id="passwordBis" required>
+    <input type="password" name="passwordBis" id="passwordBis" placeholder="Confirmer votre mot de passe" required>
     <span class="erreur"><?php echo $error["passwordBis"]??""; ?></span> 
     <br>
+    <a href="login.php">Se connecter</a>
 
     <input type="submit" value="Inscription" name="inscription">
 </form>
+</div>
+</body>
+</html>

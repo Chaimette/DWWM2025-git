@@ -1,6 +1,15 @@
 <?php
 require_once __DIR__ . "/../config/config.php";
-require_once __DIR__ . "/authManager.php";
+// require_once __DIR__ . "/authManager.php";
+
+/* 
+createUser
+getAllUsers
+getUserByUsername
+UpdateUser
+deleteUser
+isUserAdmin
+*/
 
 function getUserById(int $id): ?array
 {
@@ -74,7 +83,7 @@ function isUserAdmin(int $user_id): bool
 function deleteUser(int $id): bool
 {
     $pdo = getDbConnection();
-    if (isUserAdmin()($id)) {
+    if (isUserAdmin($id)) {
         return false;
     } else if ($id === getConnectedUserId()) {
         return false;

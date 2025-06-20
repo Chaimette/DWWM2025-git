@@ -48,10 +48,3 @@ function disconnectUser(): void
     session_destroy();
 }
 
-function isUserAdmin(): bool
-{
-    if (!isUserConnected()) {
-        return false;
-    }
-    return isUserAdmin($_SESSION['user_id']);
-}

@@ -1,6 +1,13 @@
 <?php
 require_once __DIR__."../../../config/config.php";
 
+/* 
+addCategory
+getAllCategories
+getCategoryById
+deleteCategory
+*/
+
 function getUserByMail(string $mail): ?array
 {
     $pdo = getDbConnection();

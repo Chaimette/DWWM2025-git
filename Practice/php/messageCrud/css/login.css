@@ -45,7 +45,7 @@ h1 {
   font-size: 2rem;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"] {
   width: 100%;
   padding: 0.75rem;
   margin-bottom: 1.2rem;
@@ -55,12 +55,14 @@ input[type="text"], input[type="password"] {
   background: #f8f9fa;
   transition: border 0.2s;
 }
-input[type="text"]:focus, input[type="password"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
   border-color: #667eea;
   outline: none;
 }
 
-button {
+
+button, input[type="submit"]
+ {
   background: #667eea;
   color: white;
   padding: 0.7rem 2rem;
@@ -71,7 +73,7 @@ button {
   font-weight: 500;
   transition: background 0.3s, transform 0.2s;
 }
-button:hover {
+button:hover , input[type="submit"]:hover {
   background: #764ba2;
   transform: translateY(-2px);
 }
